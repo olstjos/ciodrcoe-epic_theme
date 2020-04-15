@@ -1,0 +1,33 @@
+.view-info-results .views-row {
+  border-top: 2px solid #E66748;
+  font-family: Georgia, serif;
+  padding: 15px 0; }
+  .view-info-results .views-row:first-child {
+    border-top: none; }
+
+.view-info-results .views-field-field-department {
+  font-weight: bold;
+  font-size: 1.1em; }
+
+.view-info-results .views-field-field-url {
+  margin: 0.5em 0; }
+
+.view-info-results .views-field-field-url a {
+  color: #44D4EC; }
+
+#welcome-online-consumer-hub .main-heading {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 76px;
+  color: #E66748;
+  position: absolute;
+  top: 100px;
+  width: 500px; }
+
+#welcome-online-consumer-hub img {
+  position: relative;
+  right: -190px; }
+
+.path-frontpage h1 {
+  display: none; }

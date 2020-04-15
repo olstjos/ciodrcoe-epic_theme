@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * WxT Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ */
+function epic_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
+
+  // Load theme suggestions for blocks from parent theme.
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('epic_theme_', 'wxt_bootstrap_', $suggestion);
+  }
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function epic_theme_modules_installed($modules) {
+    if (in_array('wxt', $modules)) {
+      \Drupal::configFactory()
+        ->getEditable('system.theme')
+        ->set('default', 'epic_theme')
+        ->set('admin', 'claro')
+        ->save(TRUE);
+    }
+  }
+}
