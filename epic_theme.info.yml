@@ -26,7 +26,6 @@ regions:
 
 libraries:
   - 'epic_theme/global-styling'
-
 libraries-extend:
   bootstrap/framework:
     - 'wxt_bootstrap/drupal.wxt_bootstrap'

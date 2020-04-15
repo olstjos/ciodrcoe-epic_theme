@@ -21,12 +21,12 @@ function epic_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
 /**
  * Implements hook_modules_installed().
  */
-function epic_theme_modules_installed($modules) {
-  if (in_array('wxt', $modules)) {
-    \Drupal::configFactory()
-      ->getEditable('system.theme')
-      ->set('default', 'epic_theme')
-      ->set('admin', 'claro')
-      ->save(TRUE);
-  }
-}
+//function epic_theme_modules_installed($modules) {
+//  if (in_array('wxt', $modules)) {
+//    \Drupal::configFactory()
+//      ->getEditable('system.theme')
+//      ->set('default', 'epic_theme')
+//      ->set('admin', 'claro')
+//      ->save(TRUE);
+//  }
+//}

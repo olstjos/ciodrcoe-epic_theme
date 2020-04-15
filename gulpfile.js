@@ -41,8 +41,7 @@ gulp.task('sass', function () {
   'use strict';
   return gulp.src(sassSrcDir + '/*.scss')
     .pipe(sass(/*{outputStyle: 'compressed'}*/).on('error', sass.logError))
-    .pipe(gulp.dest(sassDestDir))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(sassDestDir));
 });
 
 gulp.task('sass:watch', ['sass'], function () {
