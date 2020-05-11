@@ -7,6 +7,26 @@
  * Place your custom PHP code in this file.
  */
 
+function epic_theme_preprocess(&$variables, $hook) {
+  // When rendering the html template, look for field_head and incorporate it into the head section
+  if ($hook == 'html') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      // You can get nid and anything else you need from the node object.
+      $nid = $node->id();
+      if ($node->hasField('field_head')) {
+        if ($fld = $node->get('field_head')) {
+          if ($fldval = $fld->getValue()) {
+            if (!empty($fldval[0]['value'])) {
+              $variables['head_extra'] = $fldval[0]['value'];
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter for blocks.
  */
