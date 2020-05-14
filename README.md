@@ -1,3 +1,9 @@
+# EPIC Theme
+
+## To compile sass
+
+`gulp sass:watch`
+
 # WxT Starterkit
 
 A WxT starterkit that helps you implement and extend [wxt_bootstrap][wxt_bootstrap] leveraging a sub-theme.
