@@ -33,21 +33,32 @@
  * @ingroup templates
  */
 #}
-{%
-  set classes = [
-    'visible-sm',
-    'visible-md',
-    'visible-lg',
-    'wb-navcurr',
-  ]
-%}
-<nav{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  <h2>{{ 'About this site'|t }}</h2>
-  {{ title_suffix }}
-  {% block content %}
-    <ul class="list-unstyled colcount-sm-2 colcount-md-3">
-    {{ content }}
-    </ul>
-  {% endblock %}
+<nav id="block-epic-theme-footer" class="visible-sm visible-md visible-lg wb-navcurr">
+{% if language == 'en' %}
+  <h2 class="wb-inv">About government</h2>
+  <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+    <li><a href="/eic/site/icgc.nsf/eng/h_07026.html">Contact us</a></li>
+    <li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+    <li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and military</a></li>
+    <li><a href="https://www.canada.ca/en/news.html">News</a></li>
+    <li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and regulations</a></li>
+    <li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide reporting</a></li>
+    <li><a href="https://pm.gc.ca/eng">Prime Minister</a></li>
+    <li><a href="https://www.canada.ca/en/government/system.html">How government works</a></li>
+    <li><a href="https://open.canada.ca/en/">Open government</a></li>
+  </ul>
+{% else %}
+  <h2 class="wb-inv">À propos de ce site</h2>
+  <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+    <li><a href="/eic/site/icgc.nsf/fra/h_07026.html">Contactez-nous</a></li>
+    <li><a href="https://www.canada.ca/fr/gouvernement/min.html">Ministères et organismes</a></li>
+    <li><a href="https://www.canada.ca/fr/gouvernement/fonctionpublique.html">Fonction publique et force militaire</a></li>
+    <li><a href="https://www.canada.ca/fr/nouvelles.html">Nouvelles</a></li>
+    <li><a href="https://www.canada.ca/fr/gouvernement/systeme/lois.html">Traités, lois et règlements</a></li>
+    <li><a href="https://www.canada.ca/fr/transparence/rapports.html">Rapports à l'échelle du gouvernement</a></li>
+    <li><a href="https://pm.gc.ca/fra">Premier ministre</a></li>
+    <li><a href="https://www.canada.ca/fr/gouvernement/systeme.html">Comment le gouvernement fonctionne</a></li>
+    <li><a href="https://ouvert.canada.ca/">Gouvernement ouvert</a></li>
+  </ul>
+{% endif %}
 </nav>
