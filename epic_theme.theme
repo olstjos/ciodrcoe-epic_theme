@@ -50,3 +50,70 @@ function epic_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
 //      ->save(TRUE);
 //  }
 //}
+
+function epic_theme_preprocess_breadcrumb(&$variables) {
+  array_shift($variables['breadcrumb']);
+  $variables['breadcrumb'] = array_merge([
+    [
+      'text' => 'Canada.ca',
+      'url' => 'https://www.canada.ca/en.html',
+    ],
+    [
+      'text' => 'Science and innovation',
+      'url' => 'https://www.canada.ca/en/services/science.html',
+    ],
+    [
+      'text' => 'R&D and innovation',
+      'url' => 'https://www.canada.ca/en/services/science/innovation.html',
+    ],
+    [
+      'text' => 'Clean technology',
+      'url' => 'https://www.canada.ca/en/services/science/innovation/clean-technology.html',
+    ],
+    [
+      'text' => 'Clean Growth Hub',
+      'url' => '/',
+    ],
+  ], $variables['breadcrumb']);
+  return;
+  $variables['breadcrumb'] = [
+    [
+      'text' => 'Canada.ca',
+      'url' => 'https://www.canada.ca/en.html',
+    ],
+    [
+      'text' => 'Science and innovation',
+      'url' => 'https://www.canada.ca/en/services/science.html',
+    ],
+    [
+      'text' => 'R&D and innovation',
+      'url' => 'https://www.canada.ca/en/services/science/innovation.html',
+    ],
+    [
+      'text' => 'Clean technology',
+      'url' => 'https://www.canada.ca/en/services/science/innovation/clean-technology.html',
+    ],
+    [
+      'text' => 'Clean Growth Hub',
+      'url' => 'https://www.ic.gc.ca/eic/site/099.nsf/eng/home',
+    ],
+  ];
+  return;
+
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+  $variables['#cache']['contexts'][] = 'url';
+  if (count($variables['breadcrumb']) <= 1) {
+    $variables['breadcrumb'] = [];
+  }
+  else {
+    $breadcrumb_title = theme_get_setting('breadcrumb_title');
+    if ($breadcrumb_title) {
+      $variables['breadcrumb'][] = array(
+        'text' => $page_title
+      );
+    }
+  }
+}
