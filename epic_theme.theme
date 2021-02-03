@@ -51,6 +51,7 @@ function epic_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
 //  }
 //}
 
+/*
 function epic_theme_preprocess_breadcrumb(&$variables) {
   $request = \Drupal::request();
   $route_match = \Drupal::routeMatch();
@@ -68,4 +69,4 @@ function epic_theme_preprocess_breadcrumb(&$variables) {
       );
     }
   }
-}
+}*/
