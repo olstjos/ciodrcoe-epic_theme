@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * @file
  * WxT Bootstrap sub-theme.
@@ -24,6 +25,10 @@ function epic_theme_preprocess(&$variables, $hook) {
         }
       }
     }
+  }
+  if ($hook == 'menu__main' && isset($variables['gcweb_cdn'])) {
+    // Overrides /admin/appearance/settings/epic_theme WxT Bootstrap Settings GCWeb CDN.
+    $variables['gcweb_cdn'] = 1; // Force gcweb mode to use the megamenu cdn.
   }
 }
 
