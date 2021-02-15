@@ -2,6 +2,7 @@ name: 'EPIC Sub-Theme'
 description: 'EPIC sub-theme(s) support leveraging WxT Bootstrap. Source files for Bootstrap are defined as part of the WxT Library module.'
 type: theme
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'EPIC'
 base theme: wxt_bootstrap
 
@@ -29,3 +30,4 @@ libraries:
 libraries-extend:
   bootstrap/framework:
     - 'wxt_bootstrap/drupal.wxt_bootstrap'
+
